@@ -1,0 +1,61 @@
+# Default Configuration for PINNI Training
+# Physics-Informed Neural Network Integration
+
+# Model Architecture Configuration
+model:
+  input_dim: 7  # 6 strain components + 1 integration variable
+  hidden_layers: [256, 256, 256, 256, 256]  # 5 hidden layers with 256 neurons each
+  activation: 'tanh'  # Activation function (tanh, relu, gelu, swish)
+  output_dim: 1  # Single output for integrand value
+  dropout_rate: 0.0  # Dropout rate (0.0 = no dropout)
+
+# Training Configuration
+training:
+  batch_size: 1024  # Training batch size
+  learning_rate: 1e-3  # Initial learning rate
+  num_epochs: 1000  # Maximum number of training epochs
+  optimizer: 'adam'  # Optimizer (adam, adamw, sgd)
+  scheduler: 'cosine'  # Learning rate scheduler (cosine, step, none)
+  early_stopping_patience: 50  # Early stopping patience
+  validation_split: 0.2  # Fraction of data for validation
+  gradient_clip_norm: 1.0  # Gradient clipping norm (null for no clipping)
+
+# Loss Function Configuration
+loss:
+  function_weight: 1.0  # Weight for function fitting loss
+  physics_weight: 1.0  # Weight for physics constraint loss
+  integration_method: 'trapezoidal'  # Integration method (trapezoidal, simpson)
+  adaptive_weights: false  # Whether to use adaptive loss weights
+  weight_update_frequency: 10  # Frequency for updating adaptive weights
+
+# Data Generation Configuration
+data:
+  num_samples: 10000  # Number of training samples
+  strain_range: [-0.1, 0.1]  # Range for strain tensor components
+  integration_bounds: [0.0, 1.0]  # Integration domain [a, b]
+  noise_level: 0.01  # Noise level for data augmentation
+  constitutive_model: 'linear_elastic'  # Constitutive model type
+  random_seed: 42  # Random seed for data generation
+
+# Inference Configuration
+inference:
+  integration_method: 'trapezoidal'  # Integration method for inference
+  n_integration_points: 100  # Default number of integration points
+  device: 'auto'  # Device selection (auto, cpu, cuda)
+  batch_inference: true  # Enable batch inference optimization
+
+# Logging and Monitoring Configuration
+logging:
+  log_level: 'INFO'  # Logging level (DEBUG, INFO, WARNING, ERROR)
+  save_frequency: 10  # Frequency for saving checkpoints (epochs)
+  plot_frequency: 50  # Frequency for generating plots (epochs)
+  tensorboard: false  # Enable TensorBoard logging
+  wandb: false  # Enable Weights & Biases logging
+
+# Experiment Configuration
+experiment:
+  name: 'pinni_default'  # Experiment name
+  description: 'Default PINNI training configuration'
+  tags: ['pinni', 'physics_informed', 'neural_integration']
+  save_best_only: true  # Save only the best model
+  monitor_metric: 'val_loss'  # Metric to monitor for best model
