@@ -1,15 +1,8 @@
-# PINNI - Physics-Informed Neural-Network Integration
+# PINNI
 
 ## Project Overview
 
-PINNI (Physics-Informed Neural-Network Integration) is a physics-informed neural network framework for accelerating mechanical constitutive integration calculations in dynamic fracture simulations. This project combines Neural Network Integration (NNI) with Physics-Informed Neural Networks (PINN) to achieve efficient and physically consistent stress tensor computations.
-
-## Core Features
-
-- **Efficient Integration**: Uses neural networks to replace traditional numerical integration, significantly improving computational efficiency
-- **Physics Constraints**: Ensures physically consistent results through physics-informed loss functions
-- **Integrable Activation Functions**: Uses Tanh activation functions to ensure smoothness and integrability
-- **Batch Inference**: Supports batch neural network inference for large-scale simulations
+Code base for paper: [TBD]
 
 ## Mathematical Principles
 
@@ -215,4 +208,4 @@ This project is licensed under the MIT License.
 
 ## Citation
 
-If you use this project in your research, please cite the relevant papers.
+If you use this project in your research, please cite [TBD].
