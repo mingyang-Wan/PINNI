@@ -188,20 +188,6 @@ stress = inference.compute_stress(strain_tensor)
 2. **Dual Constraints**: Simultaneously optimize point-wise fitting and integration constraints
 3. **Physical Consistency**: Validate integration accuracy through trapezoidal rule
 
-## Performance Advantages
-
-- **Computational Acceleration**: Inference speed improved by orders of magnitude compared to traditional numerical integration
-- **Batch Processing**: Supports parallel computation of multiple integration points
-- **Memory Efficiency**: Lightweight network architecture suitable for large-scale simulations
-
-## Contributing
-
-1. Fork the project
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
 ## License
 
 This project is licensed under the MIT License.
